@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Padel AI - Match Analyzer</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #13a4ec;
+            --background-dark: #101c22;
+            --surface-dark: #1a2830;
+            --surface-dark-light: #25343d;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "var(--primary-color)",
+                        "background-dark": "var(--background-dark)",
+                        "surface-dark": "var(--surface-dark)",
+                        "surface-dark-light": "var(--surface-dark-light)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100dvh;
+            background-color: var(--background-dark);
+        }
+        .tab-active {
+            background-color: var(--primary-color);
+            color: var(--background-dark);
+        }
+        .main-content {
+            scrollbar-width: thin;
+            scrollbar-color: #4b5563 #101c22;
+        }
+        .main-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .main-content::-webkit-scrollbar-track {
+            background: #101c22;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border-radius: 3px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display text-white">
+<div class="max-w-md mx-auto bg-background-dark min-h-screen flex flex-col">
+<header class="p-4 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-sm z-10">
+<a href="highlights.html"
+class="p-2 rounded-full hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</a>
+<div class="text-center">
+<p class="text-sm text-white/60">Match vs. Team Rocket</p>
+<h1 class="text-xl font-bold">Alex &amp; Maria</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-dark transition-colors">
+
+</button>
+</header>
+<main class="flex-1 pb-24 main-content">
+<div class="relative aspect-video">
+<img alt="Match video" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTZQSyuBEtnHjfIm7AoRCflQDO1HkpXJV8jPEPf02SkHyl0kbfNRaDVnbhTDOYbV92WMnvWoIXcC9L8ncEGktFHdahZ8nk1z-snJNe6ZOan6V7NZysLZzHFxsloAve-7JzY9_Mv3WHhfco7xU2c-8uz7rNs8gJb2hC3h7ebyQOqiAdq9Rt-wxPhGpZrvNqLU6CgRd41cROwLs7WVOO-e54wG1Dw-BLdT5MuY4t_ImIF6m9acDGcjAOiVHNL441Q5fr98zdg_xruh7S"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="p-4 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-colors">
+<span class="material-symbols-outlined !text-5xl">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+<div class="flex items-center justify-between">
+<span class="text-sm">3:45</span>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">volume_up</span>
+<span class="material-symbols-outlined">closed_caption</span>
+<span class="material-symbols-outlined">settings</span>
+<span class="material-symbols-outlined">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="bg-surface-dark rounded-xl p-4">
+<div class="flex items-center justify-between">
+<h2 class="text-lg font-bold">Match Analysis</h2>
+<span class="text-sm font-medium text-primary">Final Score: 6-4, 7-5</span>
+</div>
+<div class="mt-4">
+<div class="flex w-full bg-surface-dark-light rounded-full p-1">
+<button class="flex-1 py-2 px-4 rounded-full text-sm font-semibold transition-colors tab-active" id="positioning-tab">Positioning</button>
+<a href="tactical.html" class="flex-1 py-2 px-7 rounded-full text-sm font-semibold text-white/50 transition-colors" id="tactics-tab">Tactics</a>
+<a href="technique.html" class="flex-1 py-2 px-4 rounded-full text-sm font-semibold text-white/60 transition-colors" id="technique-tab">Technique</a>
+</div>
+<div class="mt-4 space-y-4" id="positioning-content">
+<div>
+<h3 class="font-semibold mb-2">Court Coverage Heatmap</h3>
+<div class="aspect-video bg-surface-dark-light rounded-lg flex items-center justify-center">
+<img alt="Heatmap of court coverage" class="w-full h-full object-contain rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC56Hsn1U2Nei0NjyiE8VOs7WsXRXm0D_IDCd0EyvADuY1iffhtV_J03xiAcC4Cn0W7r39RCYpfRZJ2oPlpFCpT1IIKoaMp5zCgXWbmWsplsIS3X4vBKmxYM-0KQYbj4mz0bf9dyXjjJEhbGOdOGLDiwXnLL3wuy1igeM6kcQC7jMBehP4QOb0_uvZlZAcyYEay0MNx8pPu3FopVeeJvF52DcbA4U5ldy3eY2c_pQJgP4y8E9F-JQGRDdqqmJs8cwQzzQUAHUZhbGbY"/>
+</div>
+</div>
+<div>
+<h3 class="font-semibold mb-2">Avg. Distance from Net</h3>
+<div class="bg-surface-dark-light p-3 rounded-lg flex items-center justify-between">
+<span>Alex: <span class="font-bold text-primary">3.2m</span></span>
+<span>Maria: <span class="font-bold text-pink-400">2.8m</span></span>
+<span class="text-xs text-white/50">vs Avg. 3.0m</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = [
+        { button: document.getElementById('positioning-tab'), content: document.getElementById('positioning-content') },
+        { button: document.getElementById('tactics-tab'), content: document.getElementById('tactics-content') },
+        { button: document.getElementById('technique-tab'), content: document.getElementById('technique-content') }
+    ];
+    tabs.forEach(tab => {
+        tab.button.addEventListener('click', () => {
+            // Hide all content
+            tabs.forEach(item => {
+                item.content.classList.add('hidden');
+                item.button.classList.remove('tab-active');
+                item.button.classList.add('text-white/60');
+            });
+            // Show active content and style button
+            tab.content.classList.remove('hidden');
+            tab.button.classList.add('tab-active');
+            tab.button.classList.remove('text-white/60');
+        });
+    });
+});
+</script>
+
+</body></html>

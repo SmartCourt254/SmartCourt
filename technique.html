@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Padel AI - Technique</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #13a4ec;
+            --background-dark: #101c22;
+            --surface-dark: #1a2830;
+            --surface-dark-light: #25343d;
+            --success-color: #2dd394;
+            --warning-color: #f5a623;
+            --error-color: #e9485d;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "var(--primary-color)",
+                        "background-dark": "var(--background-dark)",
+                        "surface-dark": "var(--surface-dark)",
+                        "surface-dark-light": "var(--surface-dark-light)",
+                        "success": "var(--success-color)",
+                        "warning": "var(--warning-color)",
+                        "error": "var(--error-color)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100dvh;
+            background-color: var(--background-dark);
+        }
+        .main-content {
+            scrollbar-width: none;
+        }
+        .main-content::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display text-white">
+<div class="max-w-md mx-auto bg-background-dark min-h-screen flex flex-col">
+<header class="p-4 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-sm z-20">
+<a href="analysis.html" class="p-2 rounded-full hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</a>
+<div class="text-center">
+<h1 class="text-xl font-bold">Technique</h1>
+<p class="text-sm text-white/60">Alex's Forehand</p>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-dark transition-colors">
+
+</button>
+</header>
+<main class="flex-1 pb-24 main-content">
+<div class="p-4">
+<div class="bg-surface-dark rounded-xl overflow-hidden">
+<div class="relative group">
+<img alt="Slow motion replay of a forehand shot" class="w-full h-auto aspect-video object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-pGq8M7Q4r4P3t2n0k5c8j7i6f5e4d3c2b1a0_9_8_7_6_5_4_3_2_1_0_z"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-center">
+<button class="p-3 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 transition-all">
+<span class="material-symbols-outlined !text-4xl">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center space-x-2">
+<button class="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white/30 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined !text-base">slow_motion_video</span>
+                            Slow-Mo
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4">
+<h2 class="text-lg font-bold mb-3">Shot Metrics</h2>
+<div class="grid grid-cols-3 gap-3 text-center">
+<div class="bg-surface-dark p-3 rounded-lg">
+<p class="text-xs text-white/60">Pace</p>
+<p class="text-xl font-bold">124 <span class="text-sm font-normal">kph</span></p>
+</div>
+<div class="bg-surface-dark p-3 rounded-lg">
+<p class="text-xs text-white/60">Spin</p>
+<p class="text-xl font-bold">1850 <span class="text-sm font-normal">rpm</span></p>
+</div>
+<div class="bg-surface-dark p-3 rounded-lg">
+<p class="text-xs text-white/60">Accuracy</p>
+<p class="text-xl font-bold text-success">88%</p>
+</div>
+</div>
+</div>
+<div class="px-4 mt-6">
+<h2 class="text-lg font-bold mb-3">Comparative Analysis</h2>
+<div class="bg-surface-dark p-4 rounded-xl">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-semibold">Pace vs. Personal Best</h3>
+<span class="text-sm font-bold text-warning">-5 kph</span>
+</div>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-xs text-white/80 mb-1">
+<span>Your Shot</span>
+<span>124 kph</span>
+</div>
+<div class="w-full bg-surface-dark-light rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs text-white/60 mb-1">
+<span>Personal Best</span>
+<span>129 kph</span>
+</div>
+<div class="w-full bg-surface-dark-light rounded-full h-2.5">
+<div class="bg-white/30 h-2.5 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6 mb-4">
+<h3 class="font-semibold">Technique vs. Ideal</h3>
+<span class="text-sm font-bold text-success">+3%</span>
+</div>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-xs text-white/80 mb-1">
+<span>Your Form</span>
+<span>92% Match</span>
+</div>
+<div class="w-full bg-surface-dark-light rounded-full h-2.5">
+<div class="bg-success h-2.5 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs text-white/60 mb-1">
+<span>Ideal Form</span>
+<span>Pro Benchmark</span>
+</div>
+<div class="w-full bg-surface-dark-light rounded-full h-2.5">
+<div class="bg-white/30 h-2.5 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 mt-6">
+<h2 class="text-lg font-bold mb-3">Improvement Tips</h2>
+<div class="space-y-3">
+<div class="bg-surface-dark p-4 rounded-xl flex items-start space-x-4">
+<span class="material-symbols-outlined text-error mt-1">error_outline</span>
+<div>
+<h4 class="font-semibold text-error">Late Contact Point</h4>
+<p class="text-sm text-white/70 mt-1">You're hitting the ball slightly behind your body, reducing power. Focus on meeting the ball further in front.</p>
+</div>
+</div>
+<div class="bg-surface-dark p-4 rounded-xl flex items-start space-x-4">
+<span class="material-symbols-outlined text-warning mt-1">lightbulb</span>
+<div>
+<h4 class="font-semibold text-warning">Increase Racket Head Speed</h4>
+<p class="text-sm text-white/70 mt-1">To generate more spin, try to accelerate the racket faster through the contact zone using more wrist snap.</p>
+</div>
+</div>
+<div class="bg-surface-dark p-4 rounded-xl flex items-start space-x-4">
+<span class="material-symbols-outlined text-success mt-1">check_circle_outline</span>
+<div>
+<h4 class="font-semibold text-success">Excellent Footwork</h4>
+<p class="text-sm text-white/70 mt-1">Your preparation and positioning before the shot are solid. Keep up the good work on your movement!</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</div>
+
+</body></html>

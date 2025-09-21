@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Padel AI Insights - Pre-Match Setup</title>
+  <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+            "surface-dark": "#1a2830",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: max(884px, 100dvh);
+    }
+    .toggle-radio:checked + label {
+      background-color: #13a4ec;
+      color: white;
+      border-color: #13a4ec;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.5em;
+    }
+    .blurred {
+      filter: blur(6px);
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body class="bg-background-dark font-display text-white">
+  <div class="flex flex-col min-h-screen" id="main-content">
+    <main class="flex-grow flex flex-col p-4 space-y-6">
+      <div class="text-center">
+        <h1 class="text-3xl font-bold">Court 3</h1>
+        <p class="text-white/70">Padel Village Nairobi</p>
+      </div>
+
+      <div class="bg-surface-dark rounded-xl p-4 space-y-5">
+        <!-- Game Type -->
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2">Game Type</label>
+          <div class="flex">
+            <input checked class="toggle-radio hidden" id="singles" name="game-type" type="radio"/>
+            <label class="flex-1 text-center py-2 px-4 rounded-l-lg border border-white/30 cursor-pointer transition-colors duration-200" for="singles">Singles</label>
+            <input class="toggle-radio hidden" id="doubles" name="game-type" type="radio"/>
+            <label class="flex-1 text-center py-2 px-4 rounded-r-lg border border-l-0 border-white/30 cursor-pointer transition-colors duration-200" for="doubles">Doubles</label>
+          </div>
+        </div>
+
+        <!-- Set Format -->
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2">Set Format</label>
+          <div class="flex space-x-2">
+            <input checked class="toggle-radio hidden" id="1-set" name="set-format" type="radio"/>
+            <label class="flex-1 text-center py-2 px-4 rounded-lg border border-white/30 cursor-pointer transition-colors duration-200 text-sm" for="1-set">1 Set</label>
+            <input class="toggle-radio hidden" id="best-of-3" name="set-format" type="radio"/>
+            <label class="flex-1 text-center py-2 px-4 rounded-lg border border-white/30 cursor-pointer transition-colors duration-200 text-sm" for="best-of-3">Best of 3</label>
+            <input class="toggle-radio hidden" id="best-of-5" name="set-format" type="radio"/>
+            <label class="flex-1 text-center py-2 px-4 rounded-lg border border-white/30 cursor-pointer transition-colors duration-200 text-sm" for="best-of-5">Best of 5</label>
+          </div>
+        </div>
+
+        <!-- Player Level -->
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2" for="player-level">Player Level</label>
+          <select class="w-full bg-zinc-800/60 border border-white/30 focus:border-primary focus:ring-primary rounded-lg py-2 px-4" id="player-level">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+            <option>Pro</option>
+          </select>
+        </div>
+
+        <!-- League -->
+        <div>
+          <label class="block text-sm font-medium text-white/70 mb-2" for="league-tag">League/Tournament (Optional)</label>
+          <input class="w-full bg-zinc-800/60 border border-white/30 focus:border-primary focus:ring-primary rounded-lg py-2 px-4 placeholder:text-white/40" id="league-tag" placeholder="e.g. Summer League" type="text"/>
+        </div>
+      </div>
+
+      <!-- Players -->
+      <div class="bg-surface-dark rounded-xl p-4 space-y-4">
+        <h3 class="text-lg font-semibold text-center">Players</h3>
+        <div class="space-y-3">
+          <input class="w-full bg-zinc-800/60 border border-white/30 focus:border-primary focus:ring-primary rounded-lg py-2 px-4 placeholder:text-white/40" placeholder="Player 1 Name" type="text" value="Juan Garcia"/>
+          <input class="w-full bg-zinc-800/60 border border-white/30 focus:border-primary focus:ring-primary rounded-lg py-2 px-4 placeholder:text-white/40" placeholder="Player 2 Name" type="text"/>
+        </div>
+
+        <!-- Extra players for Doubles -->
+        <div class="space-y-3 hidden" id="doubles-extra">
+          <h4 class="text-md font-medium text-primary mb-2">Team 2</h4>
+          <input class="w-full bg-zinc-800/60 border border-white/30 focus:border-primary focus:ring-primary rounded-lg py-2 px-4 placeholder:text-white/40" placeholder="Player 3 Name" type="text"/>
+          <input class="w-full bg-zinc-800/60 border border-white/30 focus:border-primary focus:ring-primary rounded-lg py-2 px-4 placeholder:text-white/40" placeholder="Player 4 Name" type="text"/>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-4 sticky bottom-0 bg-background-dark">
+      <button class="w-full bg-primary text-white font-bold py-4 rounded-lg text-lg" id="start-match-btn">
+        Start Match
+      </button>
+    </footer>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50 hidden" id="confirmation-popup">
+    <div class="bg-surface-dark rounded-xl p-6 w-full max-w-sm text-center">
+      <h2 class="text-xl font-bold mb-4">Start Match</h2>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-center justify-center space-x-3 bg-zinc-800/60 p-3 rounded-lg">
+          <span class="material-symbols-outlined text-green-500">sensors</span>
+          <div class="text-left">
+            <p class="font-semibold">Camera IP</p>
+            <p class="text-sm text-white/60">192.168.1.101</p>
+          </div>
+          <span class="ml-auto text-green-500 font-semibold text-sm">Connected</span>
+        </div>
+      </div>
+      <p class="text-white/70 mb-8">Are you ready to start the match with these settings?</p>
+      <div class="flex space-x-4">
+        <button class="flex-1 bg-zinc-700/80 text-white font-bold py-3 rounded-lg" id="cancel-btn">Cancel</button>
+        <button class="flex-1 bg-primary text-white font-bold py-3 rounded-lg" id="confirm-btn">Confirm & Start</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timer + Highlights Overlay -->
+  <div id="overlay" class="fixed inset-0 flex flex-col items-center justify-center space-y-6 hidden z-50">
+    <div id="timer" class="text-6xl font-bold">00:00</div>
+    <a href="highlights.html" class="bg-primary text-white font-bold py-3 px-6 rounded-lg text-lg">Show Match Highlights</a>
+  </div>
+
+  <script>
+    const startMatchBtn = document.getElementById('start-match-btn');
+    const confirmationPopup = document.getElementById('confirmation-popup');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const confirmBtn = document.getElementById('confirm-btn');
+    const overlay = document.getElementById('overlay');
+    const timerEl = document.getElementById('timer');
+    const mainContent = document.getElementById('main-content');
+
+    const singlesRadio = document.getElementById('singles');
+    const doublesRadio = document.getElementById('doubles');
+    const doublesExtra = document.getElementById('doubles-extra');
+
+    let timerInterval;
+    let seconds = 0;
+
+    // Show popup
+    startMatchBtn.addEventListener('click', () => {
+      confirmationPopup.classList.remove('hidden');
+    });
+
+    // Hide popup on cancel
+    cancelBtn.addEventListener('click', () => {
+      confirmationPopup.classList.add('hidden');
+    });
+
+    // Confirm match
+    confirmBtn.addEventListener('click', () => {
+      confirmationPopup.classList.add('hidden');
+      mainContent.classList.add('blurred');
+      overlay.classList.remove('hidden');
+
+      // Start timer
+      timerInterval = setInterval(() => {
+        seconds++;
+        const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+        const secs = String(seconds % 60).padStart(2, '0');
+        timerEl.textContent = `${mins}:${secs}`;
+      }, 1000);
+    });
+
+    // Close if clicking outside popup content
+    confirmationPopup.addEventListener('click', (e) => {
+      if (e.target === confirmationPopup) {
+        confirmationPopup.classList.add('hidden');
+      }
+    });
+
+    // Toggle doubles extra inputs
+    singlesRadio.addEventListener('change', () => {
+      doublesExtra.classList.add('hidden');
+    });
+
+    doublesRadio.addEventListener('change', () => {
+      doublesExtra.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

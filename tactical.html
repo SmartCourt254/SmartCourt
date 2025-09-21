@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Padel AI - Tactics</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #13a4ec;
+            --background-dark: #101c22;
+            --surface-dark: #1a2830;
+            --surface-dark-light: #25343d;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "var(--primary-color)",
+                        "background-dark": "var(--background-dark)",
+                        "surface-dark": "var(--surface-dark)",
+                        "surface-dark-light": "var(--surface-dark-light)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            min-height: 100dvh;
+            background-color: var(--background-dark);
+        }
+        .tab-active {
+            background-color: var(--primary-color);
+            color: var(--background-dark);
+        }
+        .main-content {
+            scrollbar-width: thin;
+            scrollbar-color: #4b5563 #101c22;
+        }
+        .main-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .main-content::-webkit-scrollbar-track {
+            background: #101c22;
+        }
+        .main-content::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border-radius: 3px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display text-white">
+<div class="max-w-md mx-auto bg-background-dark min-h-screen flex flex-col">
+<header class="p-4 flex items-center justify-between sticky top-0 bg-background-dark/80 backdrop-blur-sm z-10">
+<a href="analysis.html" class="p-2 rounded-full hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</a>
+<div class="text-center">
+<p class="text-sm text-white/60">Match vs. Team Rocket</p>
+<h1 class="text-xl font-bold">Tactical Insights</h1>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-dark transition-colors">
+
+</button>
+</header>
+<main class="flex-1 px-4 pb-24 main-content">
+<div class="space-y-6">
+<div>
+<h2 class="text-lg font-bold mb-3 flex items-center">
+<span class="material-symbols-outlined mr-2 text-primary">flowsheet</span> Shot Sequencing
+                </h2>
+<div class="bg-surface-dark rounded-xl p-4">
+<h3 class="font-semibold mb-2">Common Rally Patterns</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-sm">
+<span class="font-bold text-primary">1.</span>
+<span class="bg-surface-dark-light px-2 py-1 rounded-md">Serve</span>
+<span class="material-symbols-outlined text-white/50">arrow_forward</span>
+<span class="bg-surface-dark-light px-2 py-1 rounded-md">Bandeja</span>
+<span class="material-symbols-outlined text-white/50">arrow_forward</span>
+<span class="bg-primary/20 text-primary px-2 py-1 rounded-md">Winner</span>
+</div>
+<div class="flex items-center gap-2 text-sm">
+<span class="font-bold text-primary">2.</span>
+<span class="bg-surface-dark-light px-2 py-1 rounded-md">Return</span>
+<span class="material-symbols-outlined text-white/50">arrow_forward</span>
+<span class="bg-surface-dark-light px-2 py-1 rounded-md">Chiquita</span>
+<span class="material-symbols-outlined text-white/50">arrow_forward</span>
+<span class="bg-red-500/20 text-red-400 px-2 py-1 rounded-md">Error</span>
+</div>
+</div>
+
+</div>
+</div>
+<div>
+<h2 class="text-lg font-bold mb-3 flex items-center">
+<span class="material-symbols-outlined mr-2 text-primary">person_search</span> Opponent Behavior
+                </h2>
+<div class="bg-surface-dark rounded-xl">
+<h3 class="font-semibold p-4 pb-0">Opponent's Preferred Shots</h3>
+<div class="relative aspect-video flex items-center justify-center">
+<img alt="Padel court with opponent shot data" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCqR-B8XQjW6_XkE-kK9J3mX2S-o0bV9S0P5H6V1E7R2P6L2P1Y0H0c7J3N4R2J2F7P8T7G4W5T2X6E1R8S9Z0"/>
+<div class="absolute top-4 left-4 bg-background-dark/70 p-2 rounded-lg text-xs">
+<p class="font-bold">Legend:</p>
+<div class="flex items-center mt-1"><div class="w-3 h-3 rounded-full bg-yellow-400 mr-1.5"></div>Vibora</div>
+<div class="flex items-center mt-1"><div class="w-3 h-3 rounded-full bg-cyan-400 mr-1.5"></div>Bandeja</div>
+<div class="flex items-center mt-1"><div class="w-3 h-3 rounded-full bg-pink-400 mr-1.5"></div>Drop Shot</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-lg font-bold mb-3 flex items-center">
+<span class="material-symbols-outlined mr-2 text-primary">pie_chart</span> Tactical Success Rates
+                </h2>
+<div class="bg-surface-dark rounded-xl p-4 space-y-4">
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-semibold">Drop Shot Success</h3>
+<span class="font-bold text-green-400 text-lg">72%</span>
+</div>
+<div class="w-full bg-surface-dark-light rounded-full h-2.5">
+<div class="bg-green-400 h-2.5 rounded-full" style="width: 72%"></div>
+</div>
+<p class="text-xs text-white/50 mt-1">Points won after playing a drop shot.</p>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-semibold">Net Approach Success</h3>
+<span class="font-bold text-green-400 text-lg">85%</span>
+</div>
+<div class="w-full bg-surface-dark-light rounded-full h-2.5">
+<div class="bg-green-400 h-2.5 rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-xs text-white/50 mt-1">Points won when you approached the net.</p>
+</div>
+<div>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-semibold">Lob Recovery</h3>
+<span class="font-bold text-orange-400 text-lg">55%</span>
+</div>
+<div class="w-full bg-surface-dark-light rounded-full h-2.5">
+<div class="bg-orange-400 h-2.5 rounded-full" style="width: 55%"></div>
+</div>
+<p class="text-xs text-white/50 mt-1">Points won after being lobbed by opponent.</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-lg font-bold mb-3 flex items-center">
+<span class="material-symbols-outlined mr-2 text-primary">lightbulb</span> AI Recommendations
+                </h2>
+<div class="bg-primary/10 border border-primary/50 rounded-xl p-4 space-y-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">tips_and_updates</span>
+<div>
+<h3 class="font-semibold text-primary">Exploit Left Side</h3>
+<p class="text-sm text-white/80">Opponent 'Player B' has a 25% lower success rate when defending deep lobs to their left corner. Consider targeting this area.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">tips_and_updates</span>
+<div>
+<h3 class="font-semibold text-primary">Use More Chiquitas</h3>
+<p class="text-sm text-white/80">Your chiquita-to-net-approach sequence has a 90% success rate. Use it more often to take control of the point early.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
